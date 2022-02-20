@@ -230,6 +230,8 @@ function patchXML(data) {
         } else if (encryptionConfig == 5) {
           decoded = decrypt_5(element.getAttribute('EncodedSourceKey'), CryptoJS.enc.Latin1);
         }
+        var esk = element.getAttribute('EncodedSourceKey');
+        print('Encoded source key: "' + esk + '"', 'green');
         element.removeAttribute('EncodedSourceKey');
         if (element.hasAttribute('SourceProtectionType')) {
           element.removeAttribute('SourceProtectionType');
